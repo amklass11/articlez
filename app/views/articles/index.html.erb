@@ -10,5 +10,11 @@
     </p>
   <% end %>
 </div>
+<div>
+<%=
+  link_to 'Download as Excel',
+  articles_path(format: :xlsx)
+%>
+</div>
 
 <%= link_to "New article", new_article_path %>
