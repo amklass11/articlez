@@ -1,0 +1,16 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Articles") do |sheet|
+     # Add a title row
+    sheet.add_row ["Article list"], style: project_heading
+    # Add the date this was downloaded
+    sheet.add_row ["Downloaded at", Time.now.strftime("%b %-d, %Y")]
+    # Add a blank row
+    sheet.add_row []
+  # Create the header row
+  sheet.add_row ["Article Name", "description"]
+  # Create entries for each item
+  @articles.each do |article|
+    sheet.add_row [article.name, article.description]
+  end
+end
